@@ -35,10 +35,8 @@ while is_moving:
         score.game_over()
         is_moving=False
     #detect collision with tail
-    for segment in snake.segment:
-        if segment == snake.segment[0]:
-            pass
-        elif snake.segment[0].distance(segment) < 10:
+    for segment in snake.segment[1:]:
+        if snake.segment[0].distance(segment) < 10:
             is_moving = False
             score.game_over()
 
